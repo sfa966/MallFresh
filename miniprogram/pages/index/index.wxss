@@ -1,0 +1,86 @@
+/* view{
+  /* 直接使用主题颜色 */
+  /* color: var(--themeColor); */
+  /* font-size: 28rpx; */
+/* } */
+
+
+swiper{
+  widows: 100%;
+  height: 340rpx;
+  /* 原先图片的高宽换算 */
+}
+swiper image{
+  width: 100%;
+}
+
+.index_cate{
+  display: flex;
+  flex-direction: row;
+}
+
+.index_cate navigator{
+  flex: 1;
+  padding: 20rpx;
+}
+
+.index_cate navigator image{
+  width: 100%;
+}
+
+.index_produce{
+  padding: 20rpx;
+  margin-top: 20rpx;
+}
+
+.index_produce .produce_image{
+  display: flex;
+  justify-content: center;
+}
+
+.index_produce .produce_image image{
+width: 400rpx;
+}
+
+.produce_kind{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  margin-top: 40rpx;
+}
+
+.produce_kind .kinds{
+  width: 320rpx;
+  border: 1px solid rgb(219, 218, 218);
+  margin-top: 20rpx;
+  padding: 20rpx;
+  height: 410rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  box-shadow: 5rpx 5rpx 15rpx rgb(172, 169, 169);
+  border-radius: 25rpx;
+}
+
+.produce_kind .kinds .kinds_image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250rpx;
+}
+
+.kinds_image image{
+  width: 250rpx;
+}
+
+.kinds_name{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.kinds_price{
+  color: #f74c31;
+}
+
+ 

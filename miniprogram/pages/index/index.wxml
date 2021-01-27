@@ -1,0 +1,39 @@
+<view class="sc_index">
+  <!-- 搜索框 -->
+  <SearchInput></SearchInput>
+  <!-- 轮播图 -->
+  <view class="index_swiper">
+    <swiper autoplay indicator-dots circular>
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
+        <navigator>
+          <image src="{{item.image_src}}" mode="widthFix"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- 导航栏 -->
+  <view class="index_cate">
+    <navigator wx:for="{{catesList}}" wx:key="name">
+      <image src="{{item.image_src}}" mode="widthFix"></image>
+    </navigator>
+  </view>
+  <!-- 新品推荐 -->
+  <view class="index_produce">
+    <view class="produce_image">
+      <image src="https://img.alicdn.com/tfs/TB1V2eQrKSSBuNjy0FlXXbBpVXa-966-114.png" mode="widthFix"></image>
+    </view>
+    <view class="produce_kind">
+      <block wx:for="{{produceList}}" wx:key="name">
+        <navigator>
+          <view class="kinds">
+            <view class="kinds_image">
+              <image src="{{item.image}}" mode="widthFix"></image>
+            </view>
+            <view class="kinds_name">{{item.name}}</view>
+            <view class="kinds_price">{{item.price}}</view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+</view>
