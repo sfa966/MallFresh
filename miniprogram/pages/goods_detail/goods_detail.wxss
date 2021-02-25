@@ -1,1 +1,249 @@
 /* pages/goods_detail/goods_detail.wxss */
+page{
+  background-color: #f0f0f0;
+  margin-bottom: 120rpx;
+}
+.goods_img{
+  background-color: #f0f0f0;
+}
+swiper{
+  width: 100%;
+  height: 100vw;
+}
+/* 商品介绍 */
+.goods_detail{
+  padding: 20rpx;
+  background-color: #f0f0f0;
+  height: 100%;
+}
+.goods_produce{
+  border-radius: 20rpx;
+  background-color: white;
+  height: 250rpx;
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.goods_price{
+  display: flex;
+  flex-direction: row;
+  color: #ff4a04;
+  font-weight: bold;
+}
+.symbol{
+font-size: 28rpx;
+display: flex;
+align-items: flex-end;
+}
+.price{
+  font-size: 45rpx;
+}
+.goods_name{
+  font-weight: 500;
+}
+.goods_number{
+  display: flex;
+  justify-content: flex-end;
+  color:#9e9e9e ;
+  font-size: 30rpx;
+}
+
+/* 商品参数 */
+.goods_parameter{
+  margin-top: 30rpx;
+  background-color: #f0f0f0;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  background-color: white;
+}
+.parameter_detail{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  border-right: 1px solid #f0f0f0;
+}
+.parameter_name{
+  font-size: 32rpx;
+}
+.parameter_type{
+  font-size: 28rpx;
+  color: #9e9e9e;
+}
+
+/* 商品详情 */
+.goods_detail{
+  /* border: 1px solid black; */
+  /* background-color: white; */
+}
+.detail_img image{
+  display: block;
+}
+
+
+
+/* 加购功能 */
+.goods_cart{
+  height: 120rpx;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  padding: 0 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
+.cart{
+  width: 60rpx;
+  margin-top: 10rpx;
+}
+.cart image{
+  width: 60rpx;
+}
+
+.join_cart{
+  width: 80%;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+.buy_after{
+  display: flex;
+  flex: 1;
+  background-image: linear-gradient(to right, #24d64e , #2dbb59);
+  height: 100%;
+  border-radius: 50rpx 0 0 50rpx;
+  align-items: center;
+  justify-content: center;
+}
+.buy_now{
+  display: flex;
+  flex: 1;
+  height: 100%;
+  border-radius: 0 50rpx 50rpx 0;
+  align-items: center;
+  justify-content: center;
+  background-color: #ff4a04;
+
+}
+
+/* 加购弹窗 */
+.windows_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+/*对话框 */
+.windows_box {
+  height: 500rpx;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.windows_goods{
+  display: flex;
+  flex-direction: row;
+  padding: 10rpx;
+  border-bottom: 1px solid #f0f0f0;
+}
+.windows_img{
+  width: 200rpx;
+}
+.windows_img image{
+  width: 200rpx;
+}
+.windows_money{
+  color: #ff4a04;
+  display: flex;
+  flex-direction: row;
+  height: 50rpx;
+  margin: 20rpx 40rpx;
+}
+.windows_icon{
+  font-size: 28rpx;
+  display: flex;
+  align-items: flex-end;
+}
+.windows_price{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.windows_buy{
+  display: flex;
+  flex-direction: row;
+  /* margin-top: 40rpx; */
+  align-items: center;
+  height: 180rpx;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.windows_select{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.windows_select input{
+  width: 100rpx;
+  background-color: #f0f0f0;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.select_button{
+  background-color: #fafafa;
+  width: 80rpx;
+  height: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.windows_button{
+  height: 100rpx;
+  background-color: #ff4a04;
+  border-radius: 50rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 小红点 */
+.reddot{
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 50%;
+  background-color: red;
+  position: relative;
+  left: -35rpx;
+  top: -20rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+}

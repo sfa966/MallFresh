@@ -10,55 +10,82 @@ page{
 .cates_container{
   height: calc(100vh - 100rpx);
   display: flex;
+  margin-top:100rpx ;
 }
 
 .left_menu{
   flex: 2;
+  border-right: 1px solid #cccccc;
+  background-color: #f0f0f0;
+  position: fixed;
+  width: 200rpx;
+  height: 100%;
 }
 
 .menu_item{
-  height: 80rpx;
+  height: 100rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 30rpx;
+  font-size: 32rpx;
 }
 
 .active{
   color: var(--themeColor);
   border-left: 5rpx solid currentColor;
+  background-color: white;
 }
 
-.right_content{
+.right_goods{
   flex: 5;
+  margin-left: 200rpx;
+  padding: 20rpx;
 }
-
 .goods_group{
-
-}
-.goods_title{
-  height: 80rpx;
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.delimiter{
-  color: #cccccc;
-  padding: 0 10rpx;
+  flex-direction: row;
+  height: 200rpx;
+  margin-bottom: 15rpx;
 }
 
-.goods_list{
-  display: flex;
-  flex-wrap: wrap;
+.goods_image image{
+  width: 200rpx;
 }
-
-.goods_list navigator{
-  width: 33%;
-  text-align: center;
+.goods_produce{
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx;
+}
+.goods_name{
+  font-size: 30rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.goods_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.goods_price{
+  color: red;
+}
+.goods_buy image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 20rpx;
 }
 
-.goods_list image{
-  width: 50%;
+.line{
+  height: 5rpx;
+  width: 100%;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 15rpx;
+}
+
+.none{
+  display: none;
 }

@@ -14,5 +14,5 @@
 
 .active{
   color: var(--themeColor);
-  border-bottom: 5rpx solid currentColor;
+  border-bottom: 10rpx solid currentColor;
 }

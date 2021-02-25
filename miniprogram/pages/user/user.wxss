@@ -1,1 +1,37 @@
-/* pages/user/user.wxss */
+.user_data{
+  padding: 40rpx;
+  display: flex;
+  flex-direction: row;
+}
+.user_photo{
+  width: 120rpx;
+}
+.user_photo image{
+width: 120rpx;
+border-radius: 50%;
+}
+.user_detail{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  justify-content: space-around;
+}
+.user_name{
+  font-weight: bold;
+}
+.user_phone{
+  display: flex;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+  flex-direction: row;
+  align-items: center;
+}
+.phone_icon{
+  width: 30rpx;
+  /* margin-top: 10rpx; */
+}
+.phone_icon image{
+  width: 30rpx;
+}
+.phone_number{
+  font-size: 28rpx;
+  color: #8f8c8c;
+}

@@ -1,2 +1,86 @@
-<!--pages/goods_detail/goods_detail.wxml-->
-<text>pages/goods_detail/goods_detail.wxml</text>
+<view class="goods_img">
+  <swiper autoplay indicator-dots circular>
+  <swiper-item wx:for="{{produceList.src}}">
+    <image src="{{item}}" mode="widthFix"></image>
+  </swiper-item>
+  </swiper>
+  </view>
+
+<view class="goods_detail">
+  <!-- 商品详情 -->
+  <view class="goods_produce">
+    <view class="goods_price">
+      <view class="symbol">￥</view>
+      <view class="price">{{produceList.price}}</view>
+    </view>
+    <view class="goods_name">{{produceList.name}}</view>
+    <view class="goods_number">月销量：{{produceList.number}}</view>
+  </view>
+
+  <!-- 商品参数 -->
+  <view class="goods_parameter">
+    <view class="parameter_detail">
+      <view class="parameter_name">{{produceList.type_name ? produceList.type_name : "暂无" }}</view>
+      <view class="parameter_type">{{produceList.type == 1? "品种" : "品牌"}}</view>
+    </view>
+      <view class="parameter_detail">
+      <view class="parameter_name">冷藏</view>
+      <view class="parameter_type">储存条件</view>
+    </view>
+    <view class="parameter_detail">
+      <view class="parameter_name">味道鲜美</view>
+      <view class="parameter_type">推荐理由</view>
+    </view>
+  </view>
+</view>
+
+
+  <!-- 商品详情页 -->
+  <view class="goods_detail">
+    <view class="detail_img" wx:for="{{produceList.detail}}">
+      <image src="{{item}}" mode="widthFix"></image>
+    </view>
+  </view>
+
+
+<!-- 商品底部加购 -->
+<view class="goods_cart">
+  <navigator url="/pages/cart/cart" open-type="reLaunch">
+    <view class="cart">
+      <image src="cloud://release-4gl0b0a575c3e80b.7265-release-4gl0b0a575c3e80b-1304878123/image/购物车.png" mode="widthFix"></image>
+    </view>
+  </navigator>
+  <view class="reddot" wx:if="{{joinNumber > 0}}">{{joinNumber ? joinNumber : 0}}
+  </view>
+
+  <view class="join_cart">
+    <view class="buy_after" bindtap="clickAfter">加入购物车</view>
+    <view class="buy_now"  bindtap="clickNow">立即购买</view>
+  </view>
+</view>
+
+<!-- 加购弹窗 -->
+<!--屏幕背景变暗的背景  -->
+<view class="windows_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+<view animation="{{animationData}}" class="windows_box" wx:if="{{showModalStatus}}">
+  <view class="windows_goods">
+    <view class="windows_img">
+      <image src="{{produceList.src[0]}}" mode="widthFix"></image>
+    </view>
+    <view class="windows_money">
+      <view class="windows_icon">￥</view>
+      <view class="windows_price">{{produceList.price}}</view>
+    </view>
+    
+  </view>
+  <view class="windows_buy">
+    <view class="windows_num">购买数量</view>
+    <view class="windows_select">
+      <view class="select_button" bindtap="handleTap" data-num="{{-1}}">-</view>
+      <input type="text" bindinput="handleInput" value="{{buyNumber? buyNumber : 1}}"></input>
+      <view class="select_button" bindtap="handleTap" data-num="{{1}}">+</view>
+    </view>
+  </view>
+  <view class="windows_button">确认</view>
+</view>

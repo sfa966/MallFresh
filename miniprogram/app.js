@@ -15,5 +15,12 @@ App({
     }
 
     this.globalData = {}
+
+    wx.showTabBarRedDot({
+      index: 2,
+      success() {},
+      fail() {},
+    })
+
   }
 })

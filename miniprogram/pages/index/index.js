@@ -2,55 +2,55 @@
 // 引入 发送请求的方法
 import { request } from "../../request/index.js";
 
+const db = wx.cloud.database()
+
 Page({
   data: {
     // 轮播图数组
     swiperList: [],
-    // 导航数组
-    catesList: [],
+    // 分类数组
+    classList:[],
     // 模拟新品推荐数据
-    produceList: [
-      {
-        "image": "https://s1.ax1x.com/2020/10/14/0I8vCT.jpg",
-        "name": "白菜",
-        "price": "2元/斤"
-      },
-      {
-        "image": "https://s1.ax1x.com/2020/10/14/0IU6KS.md.jpg",
-        "name": "白萝卜",
-        "price": "1.2元/斤"
-      },
-      {
-        "image": "https://s1.ax1x.com/2020/10/14/0IUovT.md.jpg",
-        "name": "扁豆",
-        "price": "2元/斤"
-      },
-      {
-        "image": "https://s1.ax1x.com/2020/10/14/0IUx8x.jpg",
-        "name": "冬瓜",
-        "price": "2元/斤"
-      },
-    ]
+    produceList: []
   },
 
   // 页面开始加载后触发
   onLoad: function (options) {
 
-    this.getSwiperList();
-
-    this.getCateList();
-  },
-
-
-  // 获取轮播图数据
-  getSwiperList () {
-    request({ url: "https://api-hmugo-web.itheima.net/api/public/v1/home/swiperdata" })
-      .then(result => {
-        this.setData({
-          swiperList: result.data.message
+    let that = this
+        // 获取云服务轮播图数据
+    db.collection('index_swiper').get({
+      success:function(res){
+        console.log('success',res);
+        that.setData({
+          swiperList:res.data
         })
-      })
+      },
+      fail:res =>{
+        console.log('fail',res);
+      }
+    }),
+    // 获取云服务分类
+    db.collection('index_classify').get({
+      success:res =>{
+        console.log(res);
+        that.setData({
+          classList:res.data
+         
+        })
+      }
+    }),
+    // 获取产品显示
+    db.collection('index_produce').get({
+      success:res =>{
+        console.log(res); 
+        that.setData({
+            produceList:res.data
+          })
+      }
+    })
   },
+
 
   // 获取分类导航数据
   getCateList () {
@@ -60,6 +60,11 @@ Page({
           catesList: result.data.message
         })
       })
+  },
+  
+  // 点击商品
+  onClick(res){
+    console.log('this.produceList._id');
   }
 
 })

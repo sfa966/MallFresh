@@ -2,8 +2,12 @@
   height: 100rpx;
   padding: 15rpx;
   background-color: var(--themeColor);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
 }
-navigator{
+.search_input navigator{
   height: 100%;
   border-radius: 15rpx;
   color: #666;

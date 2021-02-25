@@ -1,2 +1,62 @@
-<!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<!-- 购物车为空 -->
+<view class="cart_empty none">
+  <view class="empty_img">
+    <image src="https://s3.ax1x.com/2021/02/04/y13340.png" mode="widthFix"></image>
+  </view>
+  <view class="empty_hint">购物车还是空的</view>
+  <navigator url="/pages/index/index" open-type="reLaunch">
+    <view class="empty_skip">去逛逛</view>
+  </navigator>
+</view>
+
+<!-- 购物车有商品时 -->
+<view class="cart_full">
+  <!-- 购物车标题 -->
+  <view class="cart_top">
+    <view class="cart_title">
+      <view class="cart_name">购物车</view>
+      <view class="cart_set" bindtap="handleSet">{{delect ? '完成' : '管理'}}</view>
+    </view>
+    <view class="cart_number">共56件商品</view>
+  </view>
+
+  <!-- 购物车商品 -->
+  <block wx:for="{{produceList}}">
+  <view  class="cart_content">
+    <view class="cart_goods">
+      <view class="cart_checkbox">
+        <checkbox checked="{{item.checked}}"></checkbox>
+      </view>
+      <view class="goods_img">
+        <image src="{{item.src[0]}}" mode="widthFix"></image>
+      </view>
+      <view class="goods_money">
+        <view class="goods_name">{{item.name}}</view>
+        <view class="goods_choice">
+          <view class="goods_price">￥{{item.price}}</view>
+          <view class="goods_select">
+           <view class="select_button" bindtap="handleTap" data-num="{{-1}}">-</view>
+           <input type="text" bindinput="handleInput" value="{{buyNumber? buyNumber : 1}}"></input>
+           <view class="select_button" bindtap="handleTap" data-num="{{1}}">+</view>
+        </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+
+</view>
+  <!-- 购物车下方 -->
+  <view class="cart_bottom">
+    <view class="cart_select">
+      <checkbox bindtap="selectall"></checkbox>
+      <view class="cartall">全选</view>
+    </view>
+    <view class="cart_delect {{delect ? '' : 'none'}}" >删除</view>
+    <view class="cart_price {{delect ? 'none' : ''}}">
+      <view class="cart_all">合计</view>
+      <view class="symbol">￥</view>
+      <view class="cart_allprice">26</view>
+    </view>
+    <view class="cart_skip {{delect ? 'none' : ''}}">去结算</view>
+  </view>

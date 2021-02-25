@@ -1,2 +1,9 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="search">
+  <view class="search_content">
+    <view class="search_input">
+      <image src="cloud://release-4gl0b0a575c3e80b.7265-release-4gl0b0a575c3e80b-1304878123/image/搜索 (1).png" mode="widthFix"></image>
+      <input type="text" placeholder="请输入您要搜索的词" confirm-type="done" bindconfirm="onSearch"></input>
+    </view>
+    <view>取消</view>
+  </view>
+</view>

@@ -1,6 +1,8 @@
 // 引入 发送请求的方法
 import { request } from "../../request/index.js";
 
+const db = wx.cloud.database()
+
 Page({
 
   /**
@@ -11,14 +13,10 @@ Page({
     // 左侧菜单数据
     leftMenuList: [],
 
-    // 右侧商品数据
-    rightContent: [],
-
-    // 被点击左侧菜单
-    currentIndex: 0,
-
-    // 右侧内容滚动条距离设置
-    scrollTop: 0
+    // 右侧产品
+    produceList:[],
+    // tab切换默认值
+    currentIndex:0
 
   },
 
@@ -29,66 +27,51 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const Cates = wx.getStorageSync("cates");
-    if (!Cates) {
-      // 不存在时 发送请求获取数据
-      this.getCates()
-    } else {
-      // 有旧数据时 定义过期时间 10s 改为5分钟
-      if (Date.now() - Cates.time > 1000 * 10) {
-        this.getCates()
-      } else {
-        // 可以使用旧的数据
-        this.Cates = Cates.data;
-        // 构造左侧菜单数据
-        let leftMenuList = this.Cates.map(v => v.cat_name);
-        // 构造右侧商品数据
-        let rightContent = this.Cates[0].children;
-        this.setData({
-          leftMenuList,
-          rightContent
+    let that  = this
+    console.log("传递的值为"+options.no);
+    if(options.no){
+      that.setData({
+      currentIndex:Number(options.no) -1
+    }, () => {
+      console.log('页面内容已经更新')
+    })
+    }
+    
+    db.collection('category_classify').get({
+      success:res =>{
+        console.log(res);
+        that.setData({
+          leftMenuList:res.data
         })
       }
-    }
-  },
-
-  // 获取分类数据
-  getCates () {
-    request({
-      url: "https://api-hmugo-web.itheima.net/api/public/v1/categories"
-    })
-      .then(res => {
-        this.Cates = res.data.message;
-
-        // 将接口数据存放到本地存储中
-        wx.setStorageSync("cates", { time: Date.now(), data: this.Cates });
-
-        // 构造左侧菜单数据
-        let leftMenuList = this.Cates.map(v => v.cat_name);
-        // 构造右侧商品数据
-        let rightContent = this.Cates[0].children;
-        this.setData({
-          leftMenuList,
-          rightContent
+    }),
+    db.collection('index_produce').get({
+      success:res =>{
+        console.log(res);
+        that.setData({
+          produceList:res.data
         })
-      })
+      }
+    })
+  },
+  // 跳去别的tab页面时刷新索引值
+  onTabItemTap:function(){
+    this.setData({
+      currentIndex:0
+    })
+
   },
 
   // 左侧菜单点击事件
   handleItemTap (e) {
-    // console.log(e);
+    console.log(e.currentTarget.dataset);
     const { index } = e.currentTarget.dataset;
-    let rightContent = this.Cates[index].children;
-
+    const no = index+1
+    console.log(no);
     this.setData({
       currentIndex: index,
-      rightContent,
-      // 重新设置右侧内容scroll标签距离
-      scrollTop: 0
-
-
     })
+
+    this.produceList
   }
-
-
 })

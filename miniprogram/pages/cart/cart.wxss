@@ -1,1 +1,238 @@
 /* pages/cart/cart.wxss */
+
+page{
+  background-color: #fafafa;
+}
+/* 购物车为空 */
+.cart_empty{
+  height: 700rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 100rpx 0;
+}
+.empty_img{
+  width: 300rpx;
+}
+.empty_img image{
+  width: 300rpx;
+}
+.empty_hint{
+  color: #8a8787;
+}
+.empty_skip{
+  height: 80rpx;
+  width: 300rpx;
+  background-image: linear-gradient(to right, #24d64e , #2dbb59);
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: center;
+  border-radius: 50rpx;
+}
+
+.none{
+  display: none;
+}
+
+
+/* 购物车有商品时 */
+.cart_full{
+  padding: 30rpx;
+  margin-bottom: 100rpx;
+  position: relative;
+  z-index: 10;
+}
+.cart_top{
+
+}
+.cart_title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.cart_name{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+.cart_number{
+  color: #8f8e8e;
+  margin-top: 10rpx;
+  font-size: 30rpx;
+}
+.cart_content{
+  height: 250rpx;
+  background-color: white;
+  padding: 20rpx;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+.cart_goods{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+checkbox .wx-checkbox-input{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #7ccd7d;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: white;
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+.goods_img{
+  width: 200rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.goods_img image{
+  width: 180rpx;
+}
+.goods_money{
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+.goods_name{
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 32rpx;
+  margin-top:20rpx ;
+}
+.goods_choice{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.goods_price{
+  color:#ff4a04 ;
+  font-size: 30rpx;
+}
+.goods_select{
+  display: flex;
+  flex-direction: row;
+}
+.select_button{
+  background-color: #fafafa;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.goods_select input{
+  width: 80rpx;
+  height: 60rpx;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+/* 购物车下方 */
+.cart_bottom{
+  height: 100rpx;
+  border-top: 1px solid #d1d1d1;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+  z-index: 100;
+  background-color: white;
+}
+
+.cart_select{
+  display: flex;
+  flex-direction: row;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  margin-left: 25rpx;
+}
+.cart_delect{
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60rpx;
+  width: 120rpx;
+  color: #ff4a04;
+  border: 1px solid #ff4a04;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+}
+.cartall{
+  margin-left: 5rpx;
+}
+
+
+.cart_price{
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+}
+.left{
+  margin-left: 150rpx;
+}
+.cart_all{
+  font-size: 28rpx;
+}
+.symbol{
+  font-size: 28rpx;
+  display: flex;
+  align-items: flex-end;
+  color: #ff4a04;
+  }
+.cart_allprice{
+  color: #ff4a04;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+.cart_skip{
+  height: 80rpx;
+  border-radius: 50rpx;
+  width: 250rpx;
+  background-color: #ff4a04;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.none{
+  display: none;
+}

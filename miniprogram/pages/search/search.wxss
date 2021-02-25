@@ -1,1 +1,25 @@
 /* pages/search/search.wxss */
+.search{
+  padding: 20rpx 10rpx;
+
+}
+
+.search_content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.search_input{
+  height: 80rpx;
+  width: 85%;
+  border:1px solid #52ac54;
+  border-radius: 20rpx;
+  padding-left: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.search_input image{
+  width: 50rpx;
+  margin: -5rpx 0 0 -15rpx;
+}

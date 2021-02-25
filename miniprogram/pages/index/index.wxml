@@ -4,33 +4,49 @@
   <!-- 轮播图 -->
   <view class="index_swiper">
     <swiper autoplay indicator-dots circular>
-      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
-        <navigator>
-          <image src="{{item.image_src}}" mode="widthFix"></image>
+      <swiper-item wx:for="{{swiperList}}" wx:key="_id">
+        <navigator >
+          <image src="{{item.src}}" mode="widthFix"></image>
         </navigator>
       </swiper-item>
     </swiper>
   </view>
-  <!-- 导航栏 -->
-  <view class="index_cate">
-    <navigator wx:for="{{catesList}}" wx:key="name">
-      <image src="{{item.image_src}}" mode="widthFix"></image>
-    </navigator>
+  <!-- 分类栏 -->
+  <view class="index_classify">
+    <block wx:for="{{classList}}" wx:key="_id">
+      <navigator url="/pages/category/category?no={{item.no}}" open-type="reLaunch">
+        <view class="classify_cont">
+            <image src="{{item.src}}" mode="widthFix"></image>
+          <view class="classify_name">{{item.name}}</view>
+        </view>
+      </navigator>
+    </block>
   </view>
-  <!-- 新品推荐 -->
-  <view class="index_produce">
-    <view class="produce_image">
+
+
+
+  
+  <!-- 可能喜欢图片 -->
+  <view class="produce_image">
       <image src="https://img.alicdn.com/tfs/TB1V2eQrKSSBuNjy0FlXXbBpVXa-966-114.png" mode="widthFix"></image>
     </view>
+
+  <!-- 新品推荐 -->
+  <view class="index_produce">
     <view class="produce_kind">
-      <block wx:for="{{produceList}}" wx:key="name">
-        <navigator>
-          <view class="kinds">
+      <block wx:for="{{produceList}}" wx:key="_id">
+        <navigator url="/pages/goods_detail/goods_detail?id={{item._id}}">
+          <view class="kinds" bindtap="onClick">
             <view class="kinds_image">
-              <image src="{{item.image}}" mode="widthFix"></image>
+              <image src="{{item.src[0]}}" mode="widthFix"></image>
             </view>
-            <view class="kinds_name">{{item.name}}</view>
-            <view class="kinds_price">{{item.price}}</view>
+            <view class="kinds_produce"> 
+              <view class="kinds_name">{{item.name}}</view>
+              <view class="kinds_buy">
+                <view class="kinds_price">￥{{item.price}}</view>
+                <view class="kinds_number">{{item.number}}人已购买</view>
+              </view>
+            </view>
           </view>
         </navigator>
       </block>
