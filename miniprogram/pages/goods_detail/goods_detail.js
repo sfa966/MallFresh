@@ -43,8 +43,9 @@ Page({
     })
   },
 
-  // 点击加购红点变化
+  // 点击加购
   clickAfter:function(e){
+    // 购物车红点变化
     // console.log(this.data.joinNumber);
     const join = this.data.produceList.joinNumber
     this.data.produceList.joinNumber = join +1
@@ -52,7 +53,12 @@ Page({
     this.setData({
       joinNumber:this.data.produceList.joinNumber
     })
-    // console.log(this.joinNumber);
+
+
+    // 购物车数据缓存
+    console.log(this.produceList);
+    const data = this.produceList
+    wx.setStorageSync('producelist', data)
     
 
   },

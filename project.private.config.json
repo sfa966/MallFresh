@@ -51,6 +51,13 @@
         {
           "name": "个人中心",
           "pathName": "pages/user/user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "登录",
+          "pathName": "pages/login/login",
+          "query": "",
           "scene": null
         }
       ]

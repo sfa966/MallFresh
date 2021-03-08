@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
 
     let that = this
-        // 获取云服务轮播图数据
+        // 获取云开发轮播图数据
     db.collection('index_swiper').get({
       success:function(res){
         console.log('success',res);
@@ -30,7 +30,7 @@ Page({
         console.log('fail',res);
       }
     }),
-    // 获取云服务分类
+    // 获取云开发分类
     db.collection('index_classify').get({
       success:res =>{
         console.log(res);
